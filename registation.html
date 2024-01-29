@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="registation.css">
+    <title>User Details Collection Form</title>
+    npx
+</head>
+
+<body>
+    <div class="container">
+        <h1 >  <div class="imgcontainer">
+            <img src="Logo1.png" alt="Avatar" class="avatar">
+        </div> </h1>
+        <!-- <h2>User Details Collection Form</h2> -->
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text"  placeholder="Enter First Name" id="firstName" name="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text"  placeholder="Enter Last Name"  id="lastName" name="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email"  placeholder="Enter Email Id" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="Tower Number">Tower Number:</label>
+                <input type="text" placeholder="Select Tower"  id="towerNumber" name="towernumber" required>
+            </div>
+            <div class="form-group">
+                <label for="flatNumber">Flat Number:</label>
+                <input type="text"  placeholder="Select Flat Number" id="flatNumber" name="flatnumber" required>
+            </div>
+            <div class="form-group">
+                <label for="residenttype">Resident Type:</label>
+                <select id="residenttype" name="residenttype" required>
+                    <option value="owner">Owner</option>
+                    <option value="tenant">Tenant</option>
+                </select>
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

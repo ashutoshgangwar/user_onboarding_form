@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OTP</title>
+  <link rel="stylesheet" href="otppage.css">
+</head>
+<body>
+  <div class="container">
+    <h1>
+      <div class="imgcontainer">
+        <img src="Logo1.png" alt="Avatar" class="avatar">
+      </div>
+    </h1>
+    
+    <h2>Enter the OTP sent to your Mobile <br>+918368300788</h2>
+  
+    <div class="otp-input">
+      <input type="text" id="otp1" maxlength="1" oninput="moveToNextInput(this)" />
+      <input type="text" id="otp2" maxlength="1" oninput="moveToNextInput(this)" />
+      <input type="text" id="otp3" maxlength="1" oninput="moveToNextInput(this)" />
+      <input type="text" id="otp4" maxlength="1" oninput="moveToNextInput(this)" />
+    </div>
+    
+    <button class="center-button" onclick="submitOTP()">Submit OTP</button>
+
+  </div>
+  
+  <script>
+    function moveToNextInput(input) {
+      if (input.value.length >= input.maxLength) {
+        const nextInput = input.nextElementSibling;
+        if (nextInput !== null) {
+          nextInput.focus();
+        }
+      }
+    }
+    
+    function submitOTP() {
+      const otp1 = document.getElementById("otp1").value;
+      const otp2 = document.getElementById("otp2").value;
+      const otp3 = document.getElementById("otp3").value;
+      const otp4 = document.getElementById("otp4").value;
+      const otp = otp1 + otp2 + otp3 + otp4;
+      const mobileNumber = "+918368300788"; // Replace with the actual mobile number entered by the user on the previous page
+      
+      // Send the OTP to the server for verification
+      fetch("/verify_otp", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ otp: otp, mobile_number: mobileNumber })
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          alert("OTP verification successful!");
+          // You can redirect the user to a different page or perform any other action upon successful OTP verification.
+        } else {
+          alert("Failed to verify OTP. Please try again.");
+        }
+      })
+      .catch(error => {
+        console.error("Error during OTP verification:", error);
+        alert("An error occurred during OTP verification. Please try again later.");
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f2f2f2;
+  }
+  
+  .container {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+  }
+  
+  img.avatar {
+    width: 40%;
+    border-radius: 20%;
+  }
+  
+  .otp-input {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .otp-input input {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  /* Hide number spinners for number input fields on some browsers */
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  /* Move focus to the next input on reaching the max length */
+  input[maxlength]:nth-last-child(1):focus {
+    outline: none;
+  }
+  
+  /* Remove the focus ring on input fields on some browsers */
+  input:focus {
+    outline: none;
+  }
+/* otppage.css */
+
+/* ... Existing styles ... */
+
+.center-button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color:  #0D0E3E;
+    color: #fff;
+    text-transform: 10px 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .center-button:hover {
+    background-color: #DD2800;
+}
+
+  
+  
+ 
+ 
+
+  
+  
+
+
+
+
+
+
+
+  

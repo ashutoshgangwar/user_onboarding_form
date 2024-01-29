@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Axios Response Example</title>
+</head>
+<body>
+    <div id="response-content"></div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        const url = "https://13.233.192.153/api/activities/project/1";
+
+        axios.get(url, { httpsAgent: { rejectUnauthorized: false } })
+            .then(response => {
+                const responseContentDiv = document.getElementById('response-content');
+                responseContentDiv.textContent = response.data;
+            })
+            .catch(error => {
+                console.error("An error occurred:", error);
+            });
+    </script>
+</body>
+</html>
